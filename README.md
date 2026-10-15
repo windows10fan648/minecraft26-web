@@ -8,6 +8,22 @@ This repository currently contains the compiled `versions/26.3.jar`, not Minecra
 - Maven 3.9+
 - Node.js 20+
 
+## Clone with the patched TeaVM submodule
+
+Clone this repository recursively so the pinned Java 25/browser-compatible
+TeaVM fork is checked out at `.tools/teavm-0.16.0`:
+
+```powershell
+git clone --recurse-submodules https://github.com/windows10fan648/minecraft26-web.git
+cd minecraft26-web
+```
+
+If the project was cloned without submodules, initialize it with:
+
+```powershell
+git submodule update --init --recursive
+```
+
 ## Run the Vite app
 
 ```powershell
