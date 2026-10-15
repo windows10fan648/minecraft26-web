@@ -1,0 +1,3 @@
+[submodule ".tools/teavm-0.16.0"]
+	path = .tools/teavm-0.16.0
+	url = https://github.com/windows10fan648/TeaVM-java25.git

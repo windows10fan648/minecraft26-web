@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root { color: #f4f0df; background: #11151b; font-family: 'Barlow Condensed', sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at 50% -10%, #283541, #11151b 70%); }
+.launcher-shell { width: min(1480px, 100%); min-height: 100vh; margin: auto; padding: 22px clamp(14px, 3vw, 48px); display: grid; grid-template-rows: auto 1fr auto; gap: 14px; }
+.topbar, .bottombar { display: flex; align-items: center; justify-content: space-between; gap: 16px; letter-spacing: .08em; }
+.brand { display: flex; align-items: baseline; gap: 9px; font-weight: 700; font-size: clamp(20px, 2vw, 29px); }
+.brand-mark { color: #a8c84d; font-size: 22px; transform: rotate(45deg); display: inline-block; }
+.brand small, .runtime-pill, .bottombar { color: #89939a; font: 11px 'IBM Plex Mono', monospace; }
+.brand small { color: #a8c84d; letter-spacing: .14em; }
+.runtime-pill { display: flex; align-items: center; gap: 8px; border: 1px solid #35404a; border-radius: 4px; padding: 8px 12px; background: #161c23; }
+.status-dot { width: 7px; height: 7px; background: #dfb65d; border-radius: 50%; box-shadow: 0 0 12px #dfb65d; }
+.status-dot[data-state='ready'] { background: #a8c84d; box-shadow: 0 0 12px #a8c84d; }
+.game-stage { position: relative; overflow: hidden; min-height: 500px; border: 1px solid #52616a; border-radius: 5px; background: #303b3e; box-shadow: 0 20px 80px #0008, inset 0 0 0 5px #10161b; }
+#game-canvas { display: block; width: 100%; height: 100%; min-height: 500px; image-rendering: pixelated; }
+.vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 45%, #050708a8 100%); }
+.crosshair { position: absolute; top: 50%; left: 50%; width: 20px; height: 20px; transform: translate(-50%, -50%); opacity: .9; }
+.crosshair i { position: absolute; background: #fff; box-shadow: 0 0 2px #000; }
+.crosshair i:first-child { width: 2px; height: 20px; left: 9px; } .crosshair i:last-child { width: 20px; height: 2px; top: 9px; }
+.hud-top, .hud-bottom { position: absolute; left: 22px; right: 22px; display: flex; justify-content: space-between; font: 11px 'IBM Plex Mono', monospace; text-shadow: 1px 1px #000; }
+.hud-top { top: 20px; color: #e3ead4; } .hud-bottom { bottom: 22px; flex-direction: column; align-items: center; gap: 10px; }
+.health { color: #d96355; letter-spacing: 4px; font-size: 18px; text-shadow: 1px 1px #161616; }
+.hotbar { display: flex; border: 2px solid #15191caa; background: #34383bcc; padding: 3px; }
+.slot { position: relative; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #707776; background: #484c4b; }
+.slot.selected { border: 2px solid #f2df9b; background: #77745d; } .slot span { width: 24px; height: 24px; box-shadow: inset -5px -5px #0002; } .slot small { position: absolute; right: 3px; bottom: 1px; font: 9px 'IBM Plex Mono'; color: #fff9; }
+.stage-message { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: #f3f0dc; text-align: center; text-shadow: 1px 2px #000; pointer-events: none; }
+.stage-message strong { font-size: clamp(22px, 3vw, 38px); letter-spacing: .04em; } .stage-message span { color: #d1d6c6; font: 12px 'IBM Plex Mono', monospace; }
+.bottombar { border-top: 1px solid #283139; padding-top: 12px; } .bottombar span:last-child { color: #5f6c75; }
+@media (max-width: 620px) { .launcher-shell { padding: 14px 10px; } .brand small, .bottombar span:last-child { display: none; } .game-stage, #game-canvas { min-height: 430px; } .hud-top { left: 12px; right: 12px; } .slot { width: 33px; height: 36px; } }

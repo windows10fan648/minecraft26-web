@@ -1,0 +1,16 @@
+# Node/Vite generated files
+node_modules/
+dist/
+
+# Maven and TeaVM build outputs
+target/
+.tools/apache-maven-3.10.0/
+.tools/apache-maven-3.10.0-bin.zip
+
+# Local logs and IDE metadata
+*.log
+.idea/
+.vscode/
+
+# Keep the patched TeaVM source as a Git submodule.
+# The Maven distribution above is intentionally not versioned.

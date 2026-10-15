@@ -1,0 +1,23 @@
+{
+  "name": "minecraft-26-3-wasm",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit": "node scripts/audit-jar.mjs",
+    "sync:wasm": "node scripts/sync-wasm.mjs",
+    "predev": "npm run sync:wasm",
+    "dev": "vite",
+    "prebuild": "npm run sync:wasm",
+    "build": "vite build",
+    "preview": "vite preview",
+    "run:wasm": "node scripts/run-wasm.mjs"
+  },
+  "devDependencies": {
+    "ejs": "^3.1.10",
+    "vite": "^7.0.0",
+    "vite-plugin-ejs": "^2.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

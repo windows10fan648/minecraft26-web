@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11151b" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <main class="launcher-shell" data-version="<%= version %>">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">◆</span><span>MINECRAFT</span><small>26.3 WASM</small></div>
+        <div class="runtime-pill"><span class="status-dot" id="status-dot"></span><span id="runtime-status">Preparing runtime</span></div>
+      </header>
+
+      <section class="game-stage" aria-label="Minecraft WebAssembly viewport">
+        <canvas id="game-canvas" width="1280" height="720"></canvas>
+        <div class="vignette"></div>
+        <div class="crosshair" aria-hidden="true"><i></i><i></i></div>
+        <div class="hud-top"><span id="fps">-- FPS</span><span>WebAssembly GC · <%= mode %></span></div>
+        <div class="hud-bottom">
+          <div class="health" aria-label="Health"><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span></div>
+          <div class="hotbar" id="hotbar"></div>
+        </div>
+        <div class="stage-message" id="stage-message">
+          <strong>WebAssembly client shell</strong>
+          <span>Waiting for the TeaVM runtime…</span>
+        </div>
+      </section>
+
+      <footer class="bottombar">
+        <span id="build-state">BOOTSTRAP BUILD · <%= version %></span>
+        <span>WASD move · Mouse look · E inventory</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
