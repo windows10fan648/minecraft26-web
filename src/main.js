@@ -67,10 +67,11 @@ function buildHotbar() {
 
 async function loadTeaVM() {
   try {
-    await loadRuntimeScript('/wasm/minecraft26.wasm-runtime.js');
+    const wasmBase = `${import.meta.env.BASE_URL}wasm/`;
+    await loadRuntimeScript(`${wasmBase}minecraft26.wasm-runtime.js`);
     const loader = globalThis.TeaVM?.wasmGC?.load;
     if (!loader) throw new Error('TeaVM loader API unavailable');
-    const loaded = await loader('/wasm/minecraft26.wasm');
+    const loaded = await loader(`${wasmBase}minecraft26.wasm`);
     const entryPoint = loaded?.exports?.main;
     if (typeof entryPoint !== 'function') throw new Error('TeaVM module does not export main');
     setRuntime('ready', 'TeaVM runtime ready');
