@@ -77,7 +77,10 @@ async function loadTeaVM() {
     setRuntime('ready', 'TeaVM runtime ready');
     stageMessage.querySelector('span').textContent = 'Java entry point loaded — renderer adapters next';
     buildState.textContent = 'TEAVM WASM GC · READY';
-    await entryPoint();
+    // TeaVM preserves the Java main(String[] args) signature in the Wasm
+    // export, so invoke it with an empty JavaScript array when no CLI args
+    // are available in the browser.
+    await entryPoint([]);
   } catch (error) {
     setRuntime('waiting', 'Renderer shell');
     stageMessage.querySelector('span').textContent = 'Build the TeaVM target to activate Java code';
